@@ -110,7 +110,7 @@
                                             </div>
                                         </div>
                                         <div class="text-center">
-                                            <button type="submit" class="btn bg-white text-primary btn-block">Sign Me In</button>
+                                            <button type="submit" class="btn bg-white text-primary btn-block">Sign In</button>
                                         </div>
                                     </form>
                                     <div class="new-account mt-3 text-center">

@@ -122,7 +122,7 @@
                                             <label for="Confrim-Password">Confirm Password</label>
                                           </div>
                                         <div class="text-center mt-4">
-                                            <button type="submit" class="btn bg-white text-primary btn-block">Sign me up</button>
+                                            <button type="submit" class="btn bg-white text-primary btn-block">Sign Up</button>
                                         </div>
                                     </form>
                                     <div class="new-account mt-3 text-center">
