@@ -31,6 +31,7 @@
 									</div>
                                     <h4 class="text-center mb-4 text-white">Sign in your account</h4>
                                     <form action="{{ route('login') }}" method="POST">
+                                        @csrf
                                         <div class="form-floating mb-3">
                                             <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
                                             <label for="floatingInput">Email address</label>
