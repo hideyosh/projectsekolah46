@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    public function __invoke(Request $request)
+    public function __invoke()
     {
-        return view('admin.app');
+        return view('admin.dashboard.index',[
+            'title' => 'Dashboard',
+        ]);
     }
 }
