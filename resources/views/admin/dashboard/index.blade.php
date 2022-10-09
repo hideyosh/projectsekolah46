@@ -1,7 +1,11 @@
 @extends('admin.app')
 
 @section('content')
+<<<<<<< HEAD
 
+=======
+<div class="container-fluid">
+>>>>>>> 63b5ce93b2d00ef570ac1c318210729d7a50ec9e
     <!-- Add Order -->
     <div class="modal fade" id="addOrderModalside">
         <div class="modal-dialog" role="document">
@@ -347,6 +351,10 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 
 
+=======
+</div>
+>>>>>>> 63b5ce93b2d00ef570ac1c318210729d7a50ec9e
 @endsection

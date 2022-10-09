@@ -31,25 +31,27 @@
 									</div>
                                     <h4 class="text-center mb-4 text-white">Sign in your account</h4>
                                     <form action="{{ route('login') }}" method="POST">
-                                        @if ($errors->any())
-                                        <div class="alert alert-danger">
-                                            <ul>
-                                                @foreach ($errors->all() as $error)
-                                                    <li>{{ $error }}</li>
-                                                @endforeach
-                                            </ul>
-                                        </div>
-                                        @endif
                                         @csrf
-                                          <div class="form-floating mb-3">
-                                            <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com" required>
+                                        <div class="form-floating mb-3">
+                                            <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
                                             <label for="floatingInput">Email address</label>
                                           </div>
-                                          <div class="form-floating mb-3">
+                                          <div class="form-floating">
                                             <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
                                             <label for="floatingPassword">Password</label>
                                           </div>
-                                        <div class="text-center mt-4">
+                                        <div class="form-row d-flex justify-content-between mt-4 mb-2">
+                                            <div class="form-group">
+                                               <div class="custom-control custom-checkbox ml-1 text-white">
+													<input type="checkbox" class="custom-control-input" id="basic_checkbox_1">
+													<label class="custom-control-label" for="basic_checkbox_1">Remember my preference</label>
+												</div>
+                                            </div>
+                                            <div class="form-group">
+                                                <a class="text-white" href="page-forgot-password.html">Forgot Password?</a>
+                                            </div>
+                                        </div>
+                                        <div class="text-center">
                                             <button type="submit" class="btn bg-white text-primary btn-block">Sign In</button>
                                         </div>
                                     </form>
