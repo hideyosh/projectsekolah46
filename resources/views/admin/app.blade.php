@@ -53,9 +53,7 @@
             Content body start
         ***********************************-->
         <div class="content-body">
-        <div class="container-fluid">
-        @yield('content')
-        </div>
+            @yield('content')
         </div>
         <!--**********************************
             Content body end
