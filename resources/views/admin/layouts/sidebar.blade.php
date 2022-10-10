@@ -6,8 +6,8 @@
                     <span class="nav-text">Admin & User</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="index.html">Admin</a></li>
-                    <li><a href="event.html">User</a></li>
+                    <li><a href="{{route('user.index')}}">Admin</a></li>
+                    <li><a href="{{route('pengguna.index')}}">User</a></li>
                 </ul>
             </li>
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
