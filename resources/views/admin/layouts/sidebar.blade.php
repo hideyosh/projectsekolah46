@@ -17,7 +17,7 @@
                         <a href="{{ route('user.index') }}">Admin</a>
                     </li>
                     <li>
-                        <a href="">Basic User</a>
+                        <a href="{{ route('basicuser.index') }}">Basic User</a>
                     </li>
                 </ul>
             </li>

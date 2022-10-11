@@ -7,7 +7,7 @@
     </div>
     <div class="card-body">
         <div class="basic-form">
-            <form class="form-valide-with-icon" method="POST" action="{{ route('user.store') }}" novalidate="">
+            <form class="form-valide-with-icon" method="POST" action="{{ route('user.update',  $user->id) }}" novalidate="">
                 @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -18,13 +18,14 @@
                         </div>
                         @endif
                 @csrf
+                @method('PUT')
                 <div class="form-group mb-4">
                     <label class="text-label">Username</label>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                         </div>
-                        <input type="text" class="form-control" id="val-username1" name="name" required="" placeholder="Enter a username..">
+                        <input type="text" class="form-control" id="val-username1" name="name" value="{{ $user->name }}">
                     </div>
                 </div>
 
@@ -34,16 +35,15 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">@</span>
                         </div>
-                        <input type="text" class="form-control" id="email" name="email" required="" placeholder="email" required="">
+                        <input type="text" class="form-control" id="email" name="email" value="{{ $user->email }}">
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Role</label>
                     <div class="dropdown bootstrap-select form-control default-select dropup">
                         <select class="form-control default-select" id="sel1" tabindex="-98" name="role">
-                            <option>Select Role</option>
-                            <option>Admin</option>
-                            <option>User</option>
+                            <option value="admin" @if($user->role == "admin")@endif>Admin</option>
+                            <option value="user" @if($user->role == "user")@endif>User</option>
                         </select>
                     </div>
                 </div>
@@ -53,13 +53,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                         </div>
-                        <input type="password" class="form-control" id="dz-password" name="password" required="" placeholder="Choose a safe one..">
-                        <div class="input-group-append show-pass ">
-                            <span class="input-group-text ">
-                                <i class="fa fa-eye-slash"></i>
-                                <i class="fa fa-eye"></i>
-                            </span>
-                        </div>
+                        <input type="password" class="form-control" id="dz-password" name="password" required="" placeholder="Choose a safe one.."> 
                     </div>
                 </div>
                 <div class="form-group mb-4">
@@ -69,12 +63,6 @@
                             <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                         </div>
                         <input type="password" class="form-control" id="dz-password" name="password_confirmation" required="" placeholder="Input the password again!">
-                        <div class="input-group-append show-pass ">
-                            <span class="input-group-text ">
-                                <i class="fa fa-eye-slash"></i>
-                                <i class="fa fa-eye"></i>
-                            </span>
-                        </div>
                     </div>
                 </div>
                 <div class="form-group">

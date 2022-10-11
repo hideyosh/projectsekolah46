@@ -47,16 +47,17 @@ class UserController extends Controller
     public function store(Request $request, User $user)
     {
          $request->validate([
-            'name' => ['required','max:30'],
-            'email' => ['required','email','max:255','unique:users'],
-            'password' => ['required','min:8'],
+            'name' => ['required'],
+            'email' => ['required','email','unique:users'],
+            'role' => ['required'],
+            'password' => ['required', 'confirmed'],
         ]);
 
         $store = $request->all();
         $store['password'] = Hash::make($request->password);
         $user->create($store);
 
-        return redirect()->route('user.index')->withToastSuccess('Created Successfully!');
+        return redirect()->route('user.index');
     }
 
     /**
@@ -97,12 +98,9 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $request->validate([
-            'name' => ['required','max:30'],
-            'email' => ['required','email','max:255'],
-            'alamat' => ['required','max:100'],
-            'role' => ['required'],
-            'telepon' => ['required','max:13'],
-            'password' => ['required','min:8'],
+            'name' => ['required'],
+            'email' => ['required','email'],
+            'password' => ['required'],
         ]);
 
         $update = $request->all();
@@ -113,7 +111,7 @@ class UserController extends Controller
 
         $user->update($update);
 
-        return redirect()->route('admin.user.index')->withToastSuccess('Updated Successfully!');
+        return redirect()->route('user.index');
     }
 
     /**
@@ -126,7 +124,7 @@ class UserController extends Controller
     {
         $user->delete();
 
-        return redirect()->route('admin.user.index')->withToastSuccess('Deleted Successfully!');
+        return redirect()->route('user.index');
     }
 }
 

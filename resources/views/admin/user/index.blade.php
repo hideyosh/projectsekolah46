@@ -1,11 +1,11 @@
 @extends('admin.app')
 
 @section('content')
-<div class="card">
+<div class="card m-4">
     <div class="card-header">
         <h4 class="card-title">{{ $title }}</h4>
     </div>
-    <a class="btn btn-rounded btn-outline-primary w-25 ms-4" href="{{ route('user.create') }}">Create Admin</a>
+    <a class="btn btn-rounded btn-outline-primary w-25 ms-4 mt-3" href="{{ route('user.create') }}">Create Admin</a>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-responsive-md">
