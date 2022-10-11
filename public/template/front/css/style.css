@@ -172,7 +172,7 @@ span {
 }
 
 #header #logo h1 a span {
-  color: #71c55d;
+  color: #FF4847;
 }
 
 #header #logo img {
@@ -223,7 +223,7 @@ span {
   font-weight: 700;
   line-height: 56px;
   font-family: "Philosopher", sans-serif;
-  color: #71c55d;
+  color: #FF4847;
 }
 
 @media (max-width: 768px) {
@@ -265,14 +265,14 @@ span {
   border-radius: 50px;
   transition: 0.5s;
   margin-bottom: 30px;
-  border: 2px solid #71c55d;
+  border: 2px solid #FF4847;
   background: #fff;
-  color: #71c55d;
+  color: #FF4847;
   text-decoration: none;
 }
 
 #hero .btn-get-started:hover {
-  background: #71c55d;
+  background: #FF4847;
   color: #fff;
 }
 

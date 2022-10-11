@@ -3,17 +3,16 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        <h4 class="card-title">Admin</h4>
+        <h4 class="card-title">{{ $title }}</h4>
     </div>
-    <a class="btn btn-rounded btn-outline-primary w-100" href="{{ route('user.create') }}">Create Admin</a>
+    <a class="btn btn-rounded btn-outline-primary w-25 ms-4" href="{{ route('user.create') }}">Create Admin</a>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-responsive-md">
                 <thead>
                     <tr>
-                        <th>NAME</th>
+                        <th>Name</th>
                         <th>Email</th>
-                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -24,10 +23,6 @@
                         </td>
                         <td>
                             <p>{{ $user->email }}</p>
-                        </td>
-
-                        <td>
-                            <p>{{ $user->role }}</p>
                         </td>
                         <td class="text-end">
                             <a href="{{ route('user.show', $user->id) }}" class="badge badge-success">

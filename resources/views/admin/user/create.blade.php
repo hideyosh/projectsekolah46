@@ -35,13 +35,10 @@
                             <span class="input-group-text">@</span>
                         </div>
                         <input type="text" class="form-control" id="email" name="email" required="" placeholder="email" required="">
-                        <div class="invalid-feedback d-block">
-                            Your email is required.
-                        </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="text-label">Password *</label>
+                    <label class="text-label">Password</label>
                     <div class="input-group transparent-append">
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
