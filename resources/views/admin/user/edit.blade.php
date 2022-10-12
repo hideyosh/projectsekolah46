@@ -38,22 +38,28 @@
                         <input type="text" class="form-control" id="email" name="email" value="{{ $user->email }}">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label>Role</label>
-                    <div class="dropdown bootstrap-select form-control default-select dropup">
+
+                <div class="form-group mb-4">
+                    <label for="text-label">Role</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="bi bi-person-rolodex"></i> </span>
+                        </div>
+                        <div class="dropdown bootstrap-select form-control default-select dropup">
                         <select class="form-control default-select" id="sel1" tabindex="-98" name="role">
                             <option value="admin" @if($user->role == "admin")@endif>Admin</option>
                             <option value="user" @if($user->role == "user")@endif>User</option>
                         </select>
-                    </div>
+                        </div>
                 </div>
-                <div class="form-group mb-4">
+
+                <div class="form-group mb-4 mt-4">
                     <label class="text-label">Password</label>
                     <div class="input-group transparent-append">
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                         </div>
-                        <input type="password" class="form-control" id="dz-password" name="password" required="" placeholder="Choose a safe one.."> 
+                        <input type="password" class="form-control" id="dz-password" name="password" required="" placeholder="Choose a safe one..">
                     </div>
                 </div>
                 <div class="form-group mb-4">
