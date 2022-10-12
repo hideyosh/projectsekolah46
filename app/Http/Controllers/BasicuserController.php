@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class BasicuserController extends Controller
 {
@@ -50,9 +51,12 @@ class BasicuserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $basicuser)
     {
-        //
+        return view('admin.basicuser.view',[
+            'title' => 'Detail User',
+            'basicuser' => $basicuser,
+        ]);
     }
 
     /**
@@ -61,9 +65,12 @@ class BasicuserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $basicuser)
     {
-        //
+        return view('admin.basicuser.edit',[
+            'title' => 'Edit User',
+            'basicuser' => $basicuser,
+        ]);
     }
 
     /**
@@ -73,9 +80,23 @@ class BasicuserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $basicuser)
     {
-        //
+        $request->validate([
+            'name' => ['required'],
+            'email' => ['required', 'email'],
+            'role' => ['required'],
+        ]);
+
+        $update = $request->all();
+
+        if ($request->filled('password')) {
+            $update['password'] = Hash::make($request->password);
+        }
+
+        $basicuser->update($update);
+
+        return redirect()->route('basicuser.index');
     }
 
     /**

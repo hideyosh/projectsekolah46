@@ -59,7 +59,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                         </div>
-                        <input type="password" class="form-control" id="dz-password" name="password" required="" placeholder="Choose a safe one..">
+                        <input type="password" class="form-control" id="dz-password"  required="" placeholder="Choose a safe one..">
                     </div>
                 </div>
                 <div class="form-group mb-4">

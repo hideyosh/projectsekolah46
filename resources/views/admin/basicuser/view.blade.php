@@ -1,5 +1,4 @@
 @extends('admin.app')
-
 @section('content')
 <div class="card m-4">
     <div class="card-header">
@@ -14,7 +13,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                         </div>
-                        <p  class="form-control" id="val-username1" style="color:black">{{ $user->name }}</p>
+                        <p  class="form-control" id="val-username1" style="color:black">{{ $basicuser->name }}</p>
                     </div>
                 </div>
 
@@ -24,7 +23,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">@</span>
                         </div>
-                        <p class="form-control" id="email" style="color:black">{{ $user->email }}</p>
+                        <p class="form-control" id="email" style="color:black">{{ $basicuser->email }}</p>
 
                 </div>
 
@@ -34,7 +33,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="bi bi-person-rolodex"></i> </span>
                         </div>
-                        <p class="form-control" id="email" style="color:black">{{ $user->role }}</p>
+                        <p class="form-control" id="email" style="color:black">{{ $basicuser->role }}</p>
 
                 </div>
 
