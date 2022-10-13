@@ -5,7 +5,7 @@
     <div class="card-header">
         <h4 class="card-title">{{ $title }}</h4>
     </div>
-    {{-- <a class="btn btn-rounded btn-outline-primary w-25 ms-4 mt-3" href="{{ route('basicuser.create') }}">Create User</a> --}}
+    <a class="btn btn-rounded btn-outline-primary w-25 ms-4 mt-3" href="{{ route('basicuser.create') }}">Create User</a>
     <div class="card-body pt-0">
         <div class="table-responsive">
             <table class="table table-responsive-md">

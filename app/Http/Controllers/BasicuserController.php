@@ -29,7 +29,7 @@ class BasicuserController extends Controller
      */
     public function create()
     {
-        return view('admin.basicuser.index',[
+        return view('admin.basicuser.create',[
             'title' => 'Create User'
         ]);
     }
@@ -40,9 +40,20 @@ class BasicuserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, User $basicuser)
     {
-        //
+        $request->validate([
+            'name' => ['required'],
+            'email' => ['required','email','unique:users'],
+            'role' => ['required'],
+            'password' => ['required', 'confirmed'],
+        ]);
+
+        $store = $request->all();
+        $store['password'] = Hash::make($request->password);
+        $basicuser->create($store);
+
+        return redirect()->route('basicuser.index');
     }
 
     /**
@@ -86,6 +97,7 @@ class BasicuserController extends Controller
             'name' => ['required'],
             'email' => ['required', 'email'],
             'role' => ['required'],
+            // 'password' => ['required'];
         ]);
 
         $update = $request->all();
@@ -105,8 +117,9 @@ class BasicuserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $basicuser)
     {
-        //
+        $basicuser->delete();
+        return redirect()->route('basicuser.index');
     }
 }

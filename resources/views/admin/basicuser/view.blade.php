@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="form-group mt-4">
-                    <a href="/user" class="btn mr-2 px-4 btn-primary">Back</a>
+                    <a href="/basicuser" class="btn mr-2 px-4 btn-primary">Back</a>
                 </div>
             </form>
         </div>
