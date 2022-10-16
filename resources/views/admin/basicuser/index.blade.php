@@ -11,7 +11,7 @@
             <table class="table table-responsive-md">
                 <thead>
                     <tr>
-                        <th>Name</th>
+                        <th>Username</th>
                         <th>Email</th>
                     </tr>
                 </thead>

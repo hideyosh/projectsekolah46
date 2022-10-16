@@ -21,6 +21,12 @@
                     </li>
                 </ul>
             </li>
+            <li>
+                <a href="{{ route('barang.index') }}" class="ai-icon" aria-expanded="false">
+                    <i class="bi bi-box-seam-fill"></i>
+                    <span class="nav-text">Barang</span>
+                </a>
+            </li>
 
 
         </ul>
