@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 use App\Models\Barang;
+use App\Http\Requests\BarangRequest;
 
 class BarangController extends Controller
 {
@@ -39,18 +40,20 @@ class BarangController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,Barang $barang)
+    public function store(BarangRequest $request)
     {
-        $request->validate([
-            'nama_barang' => ['required'],
-            'merk' => ['required'],
-            'tipe' => ['required'],
-            'jumlah' => ['required'],
-            // 'gambar' => ['nullable'],
-        ]);
+        // $request->validate([
+        //     'nama_barang' => ['required'],
+        //     'merk' => ['required'],
+        //     'tipe' => ['required'],
+        //     'jumlah_barang' => ['required'],
+        //     // 'gambar' => ['nullable'],
+        // ]);
 
-        $store = $request->all();
-        $barang->create($store);
+        // $store = $request->all();
+        // $barang->create($store);
+        $store = $request->validated();
+        Barang::create($store);
 
         return redirect()->route('barang.index');
     }
@@ -61,9 +64,12 @@ class BarangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Barang $barang)
     {
-        //
+        return view('admin.barang.view', [
+            'title' => 'Detail Barang',
+            'barang' => $barang,
+        ]);
     }
 
     /**
@@ -72,9 +78,12 @@ class BarangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Barang $barang)
     {
-        //
+        return view('admin.barang.edit',[
+            'title' => 'Edit Barang',
+            'barang' => $barang,
+        ]);
     }
 
     /**
@@ -84,9 +93,23 @@ class BarangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(BarangRequest $request, Barang $barang)
     {
-        //
+        // $request->validate([
+        //     'nama_barang' => ['required'],
+        //     'merk' => ['required'],
+        //     'tipe' => ['required'],
+        //     'jumlah_barang' => ['required'],
+        //     // 'gambar' => ['nullable'],
+        // ]);
+
+        // $update = $request->all();
+        // $barang->update($update);
+
+        $update = $request->validated();
+        $barang->update($update);
+
+        return redirect()->route('barang.index');
     }
 
     /**
@@ -95,8 +118,9 @@ class BarangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Barang $barang)
     {
-        //
+        $barang->delete();
+        return redirect()->route('barang.index');
     }
 }

@@ -18,62 +18,56 @@
                 @endif
                 @csrf
                 <div class="form-group mb-4">
-                    <label class="text-label">Username</label>
+                    <label class="text-label">Nama Barang</label>
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                            <span class="input-group-text"><i class="bi bi-box-seam"></i></span>
                         </div>
-                        <input type="text" class="form-control" id="val-username1" name="name" required="" placeholder="Enter a username..">
-                    </div>
-                </div>
-
-                <div class="form-group mb-4">
-                    <label for="text-label">Email</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">@</span>
-                        </div>
-                        <input type="text" class="form-control" id="email" name="email" required="" placeholder="email" required="">
+                        <input type="text" class="form-control" name="nama_barang" required="" placeholder="Enter a nama barang..">
                     </div>
                 </div>
                 <div class="form-group mb-4">
-                    <label for="text-label">Role</label>
+                    <label for="text-label">Tipe</label>
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <span class="input-group-text"> <i class="bi bi-person-rolodex"></i> </span>
+                            <span class="input-group-text"><i class="bi bi-view-list"></i></span>
                         </div>
+                        {{-- <input type="text" class="form-control" name="tipe" required="" placeholder="Enter a merk barang.." required=""> --}}
                         <div class="dropdown bootstrap-select form-control default-select dropup">
-                        <select class="form-control default-select" id="sel1" tabindex="-98" name="role">
-                            <option>Select Role</option>
-                            {{-- <option>Admin</option> --}}
-                            <option>User</option>
-                        </select>
+                            <select class="form-control default-select" id="sel1" tabindex="-98" name="tipe">
+                                <option>Pilih Tipe</option>
+                                <option>Proyektor/Infocus</option>
+                                <option>Alat Tulis</option>
+                            </select>
                         </div>
-                </div>
-                <div class="form-group mb-4 mt-4">
-                    <label class="text-label">Password</label>
-                    <div class="input-group transparent-append">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                        </div>
-                        <input type="password" class="form-control" id="dz-password" name="password" required="" placeholder="Choose a safe one..">
                     </div>
                 </div>
                 <div class="form-group mb-4">
-                    <label class="text-label">Confirm Password</label>
-                    <div class="input-group transparent-append">
+                    <label for="text-label">Merk</label>
+                    <div class="input-group">
                         <div class="input-group-prepend">
-                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                            <span class="input-group-text"><i class="bi bi-badge-tm-fill"></i></span>
                         </div>
-                        <input type="password" class="form-control" id="dz-password" name="password_confirmation" required="" placeholder="Input the password again!">
+                        <input type="text" class="form-control" name="merk" required="" placeholder="Enter a merk barang.." required="">
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group mb-4">
+                    <label for="text-label">Jumlah Barang</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-list-ol"></i></span>
+                        <input type="text" class="form-control" name="jumlah_barang" aria-selected="" placeholder="Enter a jumlah barang.." required="">
+                        <span class="input-group-text">
+                            Buah
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group mt-4">
                     <button type="submit" class="btn mr-2 px-4 btn-primary">Submit</button>
-                    <a href="/basicser" class="btn btn-light px-4">Cancel</a>
+                    <a href="/barang" class="btn btn-light px-4">Cancel</a>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
 @endsection

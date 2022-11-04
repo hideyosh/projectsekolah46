@@ -33,7 +33,7 @@
                             <form action="{{ route('barang.destroy', $barang->id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('delete')
-                                <button href="{{ route('logout') }}"  onclick="return confirm('Apakah anda yakin akan menghapus {{ $barang->name }}?')" class="badge badge-danger">
+                                <button href="{{ route('logout') }}"  onclick="return confirm('Apakah anda yakin akan menghapus {{ $barang->nama_barang }}?')" class="badge badge-danger">
                                     <i class="fa fa-trash"></i>
                                 </button>
                             </form>

@@ -13,10 +13,10 @@ class BarangRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
-    /**
+    /**K
      * Get the validation rules that apply to the request.
      *
      * @return array<string, mixed>
@@ -24,7 +24,11 @@ class BarangRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'nama_barang' => ['required', 'string'],
+            'merk' => ['required', 'string'],
+            'tipe' => ['required', 'string'],
+            'jumlah_barang' => ['required', 'integer'],
+            'gambar' => ['nullable'],
         ];
     }
 }

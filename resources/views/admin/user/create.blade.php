@@ -24,7 +24,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                         </div>
-                        <input type="text" class="form-control" id="val-username1" name="name" required="" placeholder="Enter a username..">
+                        <input type="text" class="form-control" id="val-username1" name="name" required="" placeholder="Enter a username.." value="{{ old('name') }}">
                     </div>
                 </div>
 
@@ -34,7 +34,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">@</span>
                         </div>
-                        <input type="text" class="form-control" id="email" name="email" required="" placeholder="email" required="">
+                        <input type="text" class="form-control" id="email" name="email" required="" placeholder="Enter a email.." required="" value="{{ old('email') }}">
                     </div>
                 </div>
                 <div class="form-group mb-4">
@@ -44,12 +44,13 @@
                             <span class="input-group-text"> <i class="bi bi-person-rolodex"></i> </span>
                         </div>
                         <div class="dropdown bootstrap-select form-control default-select dropup">
-                        <select class="form-control default-select" id="sel1" tabindex="-98" name="role">
-                            <option>Select Role</option>
-                            <option>Admin</option>
-                            <option>User</option>
-                        </select>
+                            <select class="form-control default-select" id="sel1" tabindex="-98" name="role">
+                                <option>Select Role</option>
+                                <option>Superadmin</option>
+                                <option>Admin</option>
+                            </select>
                         </div>
+                    </div>
                 </div>
                 <div class="form-group mb-4 mt-4">
                     <label class="text-label">Password</label>
