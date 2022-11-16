@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('laporans', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('barang_id')->constrained('barangs')->cascadeOnDelete();
-            $table->string('jumlah_barang_keluar');
-            // $table->timestamp('tanggal');
-            $table->timestamps();
-        });
+        // Schema::create('laporans', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->foreignId('barang_id')->constrained('barangs')->cascadeOnDelete();
+        //     $table->string('jumlah_barang_keluar');
+        //     // $table->timestamp('tanggal');
+        //     $table->timestamps();
+        // });
     }
 
     /**

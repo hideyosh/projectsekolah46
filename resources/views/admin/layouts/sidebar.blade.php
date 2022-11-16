@@ -27,8 +27,12 @@
                     <span class="nav-text">Barang</span>
                 </a>
             </li>
-
-
+            <li>
+                <a href="{{ route('tipe.index') }}" class="ai-icon" aria-expanded="false">
+                    <i class="bi bi-box-seam-fill"></i>
+                    <span class="nav-text">Tipe</span>
+                </a>
+            </li>
         </ul>
     </div>
 </div>

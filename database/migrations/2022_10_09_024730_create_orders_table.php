@@ -13,16 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
-            $table->foreignId('barang_id')->constrained('barangs')->cascadeOnDelete();
-            $table->string('nama_penerima');
-            $table->string('keteramgam');
-            $table->integer('jumlah');
-            $table->timestamp('tanggal');
-            $table->timestamps();
-        });
+        // Schema::create('orders', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
+        //     $table->foreignId('barang_id')->constrained('barangs')->cascadeOnDelete();
+        //     $table->string('nama_penerima');
+        //     $table->string('keteramgam');
+        //     $table->integer('jumlah');
+        //     $table->timestamp('tanggal');
+        //     $table->timestamps();
+        // });
     }
 
     /**
