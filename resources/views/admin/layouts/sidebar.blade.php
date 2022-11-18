@@ -29,7 +29,7 @@
             </li>
             <li>
                 <a href="{{ route('tipe.index') }}" class="ai-icon" aria-expanded="false">
-                    <i class="bi bi-box-seam-fill"></i>
+                    <i class="bi bi-view-list"></i>
                     <span class="nav-text">Tipe</span>
                 </a>
             </li>
