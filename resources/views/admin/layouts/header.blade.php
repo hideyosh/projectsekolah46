@@ -1,13 +1,7 @@
-<div class="nav-header">
+<div class="nav-header ms-4">
     <a href="{{ route('dashboard') }}" class="brand-logo">
        <h1>SMKN 46</h1>
     </a>
-
-    <div class="nav-control">
-        <div class="hamburger">
-            <span class="line"></span><span class="line"></span><span class="line"></span>
-        </div>
-    </div>
 </div>
 <div class="header">
     <div class="header-content">
