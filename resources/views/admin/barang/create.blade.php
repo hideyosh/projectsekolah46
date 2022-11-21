@@ -35,9 +35,7 @@
                         {{-- <input type="text" class="form-control" name="tipe" required="" placeholder="Enter a merk barang.." required=""> --}}
                         <div class="dropdown bootstrap-select form-control default-select dropup">
                             <select class="form-control default-select" id="sel1" tabindex="-98" name="tipe">
-                                <option>Pilih Tipe</option>
-                                <option>Proyektor/Infocus</option>
-                                <option>Alat Tulis</option>
+
                             </select>
                         </div>
                     </div>

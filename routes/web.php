@@ -29,12 +29,14 @@ Route::get('/', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');/
 
-Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', DashboardController::class)->name('dashboard');
-    Route::resource('user', UserController::class);
-    Route::resource('basicuser', BasicuserController::class);
-    Route::resource('barang', BarangController::class);
-    Route::resource('tipe', TipeController::class);
+Route::middleware('auth', 'verified')->group(function () {
+    Route::middleware('admin')->group(function() {
+        Route::get('/dashboard', DashboardController::class)->name('dashboard');
+        Route::resource('user', UserController::class);
+        Route::resource('basicuser', BasicuserController::class);
+        Route::resource('barang', BarangController::class);
+        Route::resource('tipe', TipeController::class);
+    });
 
     Route::controller(ProfileController::class)->group(function () {
         Route::get('/profile','index')->name('profile.index');
@@ -44,6 +46,12 @@ Route::middleware('auth')->group(function () {
     Route::controller(ChangePasswordController::class)->group(function () {
         Route::get('/changepassword','index')->name('changepassword.index');
         Route::post('/changepassword/update','update')->name('changepassword.update');
+    });
+
+    Route::middleware('user')->group(function () {
+        Route::get('/home', function () {
+            return view('home');
+        })->name('home');
     });
 });
 

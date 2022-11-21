@@ -12,15 +12,13 @@
                                 <div class="card-body">
                                     <div class="media align-items-center">
                                         <span class="mr-4">
-                                            <svg width="50" height="53" viewBox="0 0 50 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <rect width="7.11688" height="52.1905" rx="3.55844" transform="matrix(-1 0 0 1 49.8184 0)" fill="#FE634E"></rect>
-                                                <rect width="7.11688" height="37.9567" rx="3.55844" transform="matrix(-1 0 0 1 35.585 14.2338)" fill="#FE634E"></rect>
-                                                <rect width="7.11688" height="16.6061" rx="3.55844" transform="matrix(-1 0 0 1 21.3516 35.5844)" fill="#FE634E"></rect>
-                                                <rect width="8.0293" height="32.1172" rx="4.01465" transform="matrix(-1 0 0 1 8.0293 20.0732)" fill="#FE634E"></rect>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="53" fill="bg-primary" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
                                             </svg>
                                         </span>
                                         <div class="media-body ml-1">
-                                            <p class="mb-2">Admin</p>
+                                            <p class="mb-2">User</p>
                                             <h3 class="mb-0 text-black font-w600">{{ $admins }}</h3>
                                         </div>
                                     </div>

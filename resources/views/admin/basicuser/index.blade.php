@@ -5,7 +5,9 @@
     <div class="card-header">
         <h4 class="card-title">{{ $title }}</h4>
     </div>
-    <a class="btn btn-rounded btn-outline-primary w-25 ms-4 mt-3" href="{{ route('basicuser.create') }}">Create User</a>
+    @can('superadmin')
+        <a class="btn btn-rounded btn-outline-primary w-25 ms-4 mt-3" href="{{ route('basicuser.create') }}">Create User</a>
+    @endcan
     <div class="card-body pt-0">
         <div class="table-responsive">
             <table class="table table-responsive-md">
@@ -28,6 +30,7 @@
                             <a href="{{ route('basicuser.show', $basicuser->id) }}" class="badge badge-success">
                                 <i class="fa fa-eye"></i>
                             </a>
+                            @can('superadmin')
                             <a href="{{ route('basicuser.edit', $basicuser->id) }}" class="badge badge-primary">
                                 <i class="fa fa-pencil"></i>
                             </a>
@@ -38,6 +41,7 @@
                                     <i class="fa fa-trash"></i>
                                 </button>
                             </form>
+                            @endcan
                         </td>
                     </tr>
                 @endforeach

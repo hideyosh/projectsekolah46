@@ -18,16 +18,16 @@ class ChangePasswordController extends Controller
     }
     public function update(Request $request)
     {
-            $validateData = $request->validate([
-            'oldpassword' => 'required',
-            'newpassword' => 'required',
-            'confirm_password' => 'required|same:newpassword',
+            $request->validate([
+                'oldpassword' => 'required',
+                'newpassword' => 'required',
+                'confirm_password' => 'required|same:newpassword',
             ]);
 
             $hashedPassword = Auth::user()->password;
             if (Hash::check($request->oldpassword,$hashedPassword )) {
                 $users = User::find(Auth::id());
-                $users->password = bcrypt($request->newpassword);
+                $users->password = Hash::make($request->newpassword);
                 $users->save();
 
                 session()->flash('message','Password Berhasil DiGanti');

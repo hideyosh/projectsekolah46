@@ -31,6 +31,8 @@ class UserController extends Controller
      */
     public function create()
     {
+        $this->authorize('superadmin');
+
         return view('admin.user.create', [
             'title' => 'Create Admin',
         ]);
@@ -80,6 +82,8 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
+        $this->authorize('superadmin');
+
         return view('admin.user.edit', [
             'user' => $user,
             'title' => 'Edit Admin'

@@ -1,13 +1,7 @@
-<div class="nav-header">
+<div class="nav-header ms-3">
     <a href="{{ route('dashboard') }}" class="brand-logo">
        <h1>SMKN 46</h1>
     </a>
-
-    <div class="nav-control">
-        <div class="hamburger">
-            <span class="line"></span><span class="line"></span><span class="line"></span>
-        </div>
-    </div>
 </div>
 <div class="header">
     <div class="header-content">
@@ -28,6 +22,10 @@
                             <a href="{{ route('profile.index') }}" class="dropdown-item ai-icon">
                                 <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                                 <span class="ml-2">Profile </span>
+                            </a>
+                            <a href="{{ route('profile.index') }}" class="dropdown-item ai-icon">
+                                <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                <span class="ml-2">Mail</span>
                             </a>
                             <a href="{{ route('changepassword.index') }}" class="dropdown-item ai-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-key-fill text-primary" viewBox="0 0 16 16">

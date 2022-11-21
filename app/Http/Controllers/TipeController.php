@@ -18,7 +18,7 @@ class TipeController extends Controller
 
         return view('admin.tipe.index', [
             'types' => $type,
-            'title' => 'Table Type',
+            'title' => 'Table Tipe',
         ]);
     }
 
@@ -29,7 +29,9 @@ class TipeController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.tipe.create',[
+            'title' => 'Create Tipe'
+        ]);
     }
 
     /**
@@ -38,9 +40,16 @@ class TipeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Tipe $tipe)
     {
-        //
+        $request->validate([
+            'nama_tipe' => ['required'],
+        ]);
+
+        $store = $request->all();
+        $tipe->create($store);
+
+        return to_route('tipe.index');
     }
 
     /**
@@ -49,9 +58,12 @@ class TipeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Tipe $tipe)
     {
-        //
+        return view('admin.tipe.view',[
+            'title' => 'Detail Tipe',
+            'tipe' => $tipe
+        ]);
     }
 
     /**
@@ -60,9 +72,12 @@ class TipeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Tipe $tipe)
     {
-        //
+        return view('admin.tipe.edit',[
+            'title' => 'Edit Tipe',
+            'tipe' => $tipe,
+        ]);
     }
 
     /**
@@ -72,9 +87,16 @@ class TipeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Tipe $tipe)
     {
-        //
+        $request->validate([
+            'nama_tipe' => 'required'
+        ]);
+
+        $update = $request->all();
+        $tipe->update($update);
+
+        return to_route('tipe.index');
     }
 
     /**
@@ -83,8 +105,10 @@ class TipeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Tipe $tipe)
     {
-        //
+        $tipe->delete();
+
+        return to_route('tipe.index');
     }
 }

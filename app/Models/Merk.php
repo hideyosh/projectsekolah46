@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Barang extends Model
+class Merk extends Model
 {
     use HasFactory;
 
@@ -13,13 +13,8 @@ class Barang extends Model
         'id'
     ];
 
-    public function tipe()
+    public function barang()
     {
-        return $this->belongsTo(Tipes::class);
-    }
-
-    public function merk()
-    {
-        return $this->belongsTo(Merks::class);
+        return $this->hasMany(Barang::class);
     }
 }

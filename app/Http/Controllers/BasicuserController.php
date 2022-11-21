@@ -29,6 +29,8 @@ class BasicuserController extends Controller
      */
     public function create()
     {
+        $this->authorize('superadmin');
+
         return view('admin.basicuser.create',[
             'title' => 'Create User'
         ]);
@@ -78,6 +80,8 @@ class BasicuserController extends Controller
      */
     public function edit(User $basicuser)
     {
+        $this->authorize('superadmin');
+
         return view('admin.basicuser.edit',[
             'title' => 'Edit User',
             'basicuser' => $basicuser,

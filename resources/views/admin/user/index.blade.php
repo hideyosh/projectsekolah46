@@ -5,7 +5,9 @@
     <div class="card-header">
         <h4 class="card-title">{{ $title }}</h4>
     </div>
-    <a class="btn btn-rounded btn-outline-primary w-25 ms-4 mt-3" href="{{ route('user.create') }}">Create Admin</a>
+    @can('superadmin')
+        <a class="btn btn-rounded btn-outline-primary w-25 ms-4 mt-3" href="{{ route('user.create') }}">Create Admin</a>
+    @endcan
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-responsive-md">
@@ -28,16 +30,18 @@
                             <a href="{{ route('user.show', $user->id) }}" class="badge badge-success">
                                 <i class="fa fa-eye"></i>
                             </a>
-                            <a href="{{ route('user.edit', $user->id) }}" class="badge badge-primary">
-                                <i class="fa fa-pencil"></i>
-                            </a>
-                            <form action="{{ route('user.destroy', $user->id) }}" method="POST" class="d-inline">
-                                @csrf
-                                @method('delete')
-                                <button href="{{ route('logout') }}"  onclick="return confirm('Apakah anda yakin akan menghapus {{ $user->name }}?')" class="badge badge-danger">
-                                    <i class="fa fa-trash"></i>
-                                </button>
-                            </form>
+                            @can('superadmin')
+                                <a href="{{ route('user.edit', $user->id) }}" class="badge badge-primary">
+                                    <i class="fa fa-pencil"></i>
+                                </a>
+                                <form action="{{ route('user.destroy', $user->id) }}" method="POST" class="d-inline">
+                                    @csrf
+                                    @method('delete')
+                                    <button href="{{ route('logout') }}"  onclick="return confirm('Apakah anda yakin akan menghapus {{ $user->name }}?')" class="badge badge-danger">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </form>
+                            @endcan
                         </td>
                     </tr>
                 @endforeach
