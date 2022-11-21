@@ -10,17 +10,15 @@ class DashboardController extends Controller
 {
     public function __invoke()
     {
-
-        $users = User::where('role','user')->count();
-        $admins = User::where('role','admin')->count();
+        $admins = User::where('role', 'superadmin')->orWhere('role', 'admin')->count();
+        $users = User::where('role', 'user')->count();
         $barangs = Barang::count();
 
         return view('admin.dashboard.index',[
-
             'title' => 'Dashboard',
             'users' => $users,
             'admins' => $admins,
-            'barangs' => $barangs,
+            'barangs' => $barangs
         ]);
     }
 }

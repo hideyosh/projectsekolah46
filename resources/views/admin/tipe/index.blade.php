@@ -1,6 +1,5 @@
 @extends('admin.app')
 @section('content')
-<<<<<<< HEAD
 <div class="card m-4">
     <div class="card-header">
         <h4 class="card-title">{{ $title }}</h4>
@@ -45,7 +44,4 @@
         </div>
     </div>
 </div>
-=======
-
->>>>>>> 51b5ca69bacb11a9d6297217da9991aa3d1c9caf
 @endsection

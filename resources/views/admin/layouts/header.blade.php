@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <div class="nav-header ms-3">
-=======
-<div class="nav-header ms-4">
->>>>>>> 51b5ca69bacb11a9d6297217da9991aa3d1c9caf
     <a href="{{ route('dashboard') }}" class="brand-logo">
        <h1>SMKN 46</h1>
     </a>

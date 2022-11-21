@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\BasicuserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ChangePasswordController;
+use App\Http\Controllers\MerkController;
 use App\Http\Controllers\TipeController;
 
 
@@ -36,6 +37,7 @@ Route::middleware('auth', 'verified')->group(function () {
         Route::resource('basicuser', BasicuserController::class);
         Route::resource('barang', BarangController::class);
         Route::resource('tipe', TipeController::class);
+        Route::resource('merk', MerkController::class);
     });
 
     Route::controller(ProfileController::class)->group(function () {
