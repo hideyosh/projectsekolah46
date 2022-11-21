@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 // use Illuminate\Http\Request;
 use App\Models\Barang;
+use App\Models\Tipe;
+use App\Models\Merk;
 use App\Http\Requests\BarangRequest;
 
 class BarangController extends Controller
