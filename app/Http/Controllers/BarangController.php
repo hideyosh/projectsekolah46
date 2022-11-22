@@ -17,7 +17,7 @@ class BarangController extends Controller
      */
     public function index()
     {
-        $barang = Barang::paginate(5);
+        $barang = Barang::with('merk', 'tipe')->paginate(5);
         return view('admin.barang.index',[
             'barangs' => $barang,
             'title' => 'Table Barang'
@@ -31,8 +31,15 @@ class BarangController extends Controller
      */
     public function create()
     {
+        $barang = Barang::with('merk', 'tipe')->get();
+        $merk = Merk::with('barang')->get();
+        $tipe = Tipe::with('barang')->get();
+
         return view('admin.barang.create',[
             'title' => 'Create Barang',
+            'barang' => $barang,
+            'merk' => $merk,
+            'tipe' => $tipe
         ]);
     }
 
@@ -82,9 +89,16 @@ class BarangController extends Controller
      */
     public function edit(Barang $barang)
     {
+        $barangs = Barang::with('merk', 'tipe')->get();
+        $tipe = Tipe::with('barang')->get();
+        $merk = Merk::with('barang')->get();
+
         return view('admin.barang.edit',[
             'title' => 'Edit Barang',
             'barang' => $barang,
+            'barangs' => $barangs,
+            'tipe' => $tipe,
+            'merk' => $merk
         ]);
     }
 
