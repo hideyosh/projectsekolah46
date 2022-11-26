@@ -23,7 +23,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="bi bi-view-list"></i></span>
                         </div>
-                        <p class="form-control" id="email" style="color:black">{{ $barang->tipe }}</p>
+                        <p class="form-control" id="email" style="color:black">{{ $barang->tipe->nama_tipe }}</p>
                     </div>
                 </div>
                 <div class="form-group mb-4 mt-4">
@@ -32,7 +32,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="bi bi-badge-tm-fill"></i></span>
                         </div>
-                        <p class="form-control" id="email" style="color:black">{{ $barang->merk }}</p>
+                        <p class="form-control" id="email" style="color:black">{{ $barang->merk->nama_merk }}</p>
                     </div>
                 </div>
                 <div class="form-group mb-4 mt-4">

@@ -15,11 +15,11 @@ class Barang extends Model
 
     public function tipe()
     {
-        return $this->belongsTo(Tipes::class);
+        return $this->belongsTo(Tipe::class);
     }
 
     public function merk()
     {
-        return $this->belongsTo(Merks::class);
+        return $this->belongsTo(Merk::class);
     }
 }

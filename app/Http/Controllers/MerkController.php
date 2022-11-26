@@ -14,7 +14,7 @@ class MerkController extends Controller
      */
     public function index()
     {
-        $merk = Merk::paginate(5);
+        $merk = Merk::latest()->paginate(5);
         return view('admin.merk.index',[
             'title' => 'Table Merk',
             'merks' => $merk
@@ -29,7 +29,9 @@ class MerkController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.merk.create',[
+            'title' => 'Create Merk'
+        ]);
     }
 
     /**
@@ -38,9 +40,16 @@ class MerkController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Merk $merk)
     {
-        //
+        $request->validate([
+            'nama_merk' => ['required']
+        ]);
+
+        $store = $request->all();
+        $merk->create($store);
+
+        return to_route('merk.index');
     }
 
     /**
@@ -49,9 +58,12 @@ class MerkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Merk $merk)
     {
-        //
+        return view('admin.merk.view',[
+            'merk' => $merk,
+            'title' => 'Detail Merk'
+        ]);
     }
 
     /**
@@ -60,9 +72,12 @@ class MerkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Merk $merk)
     {
-        //
+        return view('admin.merk.edit',[
+            'title' => 'Edit Merk',
+            'merk' => $merk
+        ]);
     }
 
     /**
@@ -72,9 +87,18 @@ class MerkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Merk $merk)
     {
-        //
+        $request->validate([
+            'nama_merk' => 'required'
+        ]);
+
+        $update = $request->all();
+        $merk->update($update);
+
+        return to_route('tipe.index');
+
+
     }
 
     /**
@@ -83,8 +107,9 @@ class MerkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Merk $merk)
     {
-        //
+        $merk->delete();
+        return to_route('merk.index');
     }
 }

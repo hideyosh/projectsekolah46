@@ -14,11 +14,11 @@ class TipeController extends Controller
      */
     public function index()
     {
-        $type = Tipe::paginate('5');
+        $type = Tipe::latest()->paginate('5');
 
         return view('admin.tipe.index', [
             'types' => $type,
-            'title' => 'Table Tipe',
+            'title' => 'Table Tipe'
         ]);
     }
 

@@ -23,7 +23,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="bi bi-box-seam"></i></span>
                         </div>
-                        <input type="text" class="form-control" name="nama_barang" required="" placeholder="Enter a nama barang..">
+                        <input type="text" class="form-control" name="nama_barang" required="" placeholder="Enter a nama barang.." value="{{ old('nama_barang') }}">
                     </div>
                 </div>
                 <div class="form-group mb-4">
@@ -32,10 +32,12 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="bi bi-view-list"></i></span>
                         </div>
-                        {{-- <input type="text" class="form-control" name="tipe" required="" placeholder="Enter a merk barang.." required=""> --}}
                         <div class="dropdown bootstrap-select form-control default-select dropup">
-                            <select class="form-control default-select" id="sel1" tabindex="-98" name="tipe">
-
+                            <select class="form-control default-select" id="sel1" tabindex="-98" name="tipe_id">
+                                <option value="default">Please Choose Tipe..</option>
+                                @foreach ($tipe as $tipe)
+                                    <option value="{{ $tipe->id }}">{{ $tipe->nama_tipe }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -46,7 +48,14 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="bi bi-badge-tm-fill"></i></span>
                         </div>
-                        <input type="text" class="form-control" name="merk" required="" placeholder="Enter a merk barang.." required="">
+                        <div class="dropdown bootstrap-select form-control default-select dropup">
+                            <select class="form-control default-select" id="sel1" tabindex="-98" name="merk_id">
+                                <option value="default">Please Choose Merk..</option>
+                                @foreach ($merk as $merk)
+                                    <option value="{{ $merk->id }}">{{ $merk->nama_merk }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group mb-4">

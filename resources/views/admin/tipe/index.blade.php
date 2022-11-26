@@ -20,9 +20,6 @@
                             <p>{{ $type->nama_tipe }}</p>
                         </td>
                         <td>
-                            <p>{{ $type->email }}</p>
-                        </td>
-                        <td>
                             <a href="{{ route('tipe.show', $type->id) }}" class="badge badge-success">
                                 <i class="fa fa-eye"></i>
                             </a>

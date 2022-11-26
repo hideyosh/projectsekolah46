@@ -22,14 +22,14 @@
                     <label class="text-label">Nama Tipe</label>
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                            <span class="input-group-text"><i class="bi bi-view-list"></i></span>
                         </div>
                         <input type="text" class="form-control" id="val-username1" name="nama_tipe" required=""  value="{{ $tipe->nama_tipe }}">
                     </div>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn mr-2 px-4 btn-primary">Submit</button>
-                    <a href="/user" class="btn btn-light px-4">Cancel</a>
+                    <a href="/tipe" class="btn btn-light px-4">Cancel</a>
                 </div>
             </form>
         </div>

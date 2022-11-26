@@ -11,7 +11,7 @@
                     <label class="text-label mb-4">Nama Tipe</label>
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                            <span class="input-group-text"><i class="bi bi-view-list"></i></span>
                         </div>
                         <p  class="form-control" id="val-username1" style="color:black">{{ $tipe->nama_tipe }}</p>
                     </div>

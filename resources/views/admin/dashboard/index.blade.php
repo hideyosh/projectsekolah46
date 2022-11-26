@@ -46,7 +46,7 @@
                                         </span>
                                         <div class="media-body ml-1">
                                             <p class="mb-2">Barang</p>
-                                            <h3 class="mb-0 text-secondary fw-400">{{ $users }}</h3>
+                                            <h3 class="mb-0 text-secondary fw-400">{{ $barangs }}</h3>
                                         </div>
                                     </div>
                                 </div>

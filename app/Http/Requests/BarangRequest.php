@@ -25,8 +25,8 @@ class BarangRequest extends FormRequest
     {
         return [
             'nama_barang' => ['required', 'string'],
-            'merk' => ['required', 'string'],
-            'tipe' => ['required', 'string'],
+            'merk_id' => ['required', 'string'],
+            'tipe_id' => ['required', 'string'],
             'jumlah_barang' => ['required', 'integer'],
             'gambar' => ['nullable'],
         ];

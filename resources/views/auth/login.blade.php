@@ -33,21 +33,13 @@
                                     <form action="{{ route('login') }}" method="POST">
                                         @csrf
                                         <div class="form-floating mb-3">
-                                            <input type="email" class="form-control" id="floatingInput" name="email" placeholder="Username">
+                                            <input type="email" class="form-control" id="floatingInput" name="email" placeholder="email" value="{{ old('email') }}" autofocus>
                                             <label for="floatingInput">Email address</label>
                                             <x-input-error :messages="$errors->get('email')" class="mt-2 text-white"/>
                                           </div>
                                           <div class="form-floating">
                                             <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
                                             <label for="floatingPassword">Password</label>
-                                            <x-input-error :messages="$errors->get('password')" class="mt-2 text-white" />
-                                                {{-- @if ($errors->get('password'))
-                                                <ul>
-                                                    @foreach ($errors->get('password') as $error)
-                                                        <li class="text-white pt-2">{{ $error }}</li>
-                                                    @endforeach
-                                                </ul>
-                                        @endif --}}
                                           </div>
                                         <div class="form-row d-flex justify-content-between mt-4 mb-2">
                                             <div class="form-group">

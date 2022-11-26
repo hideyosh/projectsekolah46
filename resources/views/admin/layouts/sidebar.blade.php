@@ -33,6 +33,12 @@
                     <span class="nav-text">Tipe</span>
                 </a>
             </li>
+            <li>
+                <a href="{{ route('merk.index') }}" class="ai-icon" aria-expanded="false">
+                    <i class="bi bi-badge-tm-fill"></i>
+                    <span class="nav-text">Merk</span>
+                </a>
+            </li>
         </ul>
     </div>
 </div>

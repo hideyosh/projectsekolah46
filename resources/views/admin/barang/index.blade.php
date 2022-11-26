@@ -21,7 +21,7 @@
                             <p>{{ $barang->nama_barang }}</p>
                         </td>
                         <td>
-                            <p>{{ $barang->merk }}</p>
+                            <p>{{ $barang->merk->nama_merk }}</p>
                         </td>
                         <td class="text-end">
                             <a href="{{ route('barang.show', $barang->id) }}" class="badge badge-success">

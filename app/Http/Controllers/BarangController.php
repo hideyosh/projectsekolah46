@@ -17,7 +17,7 @@ class BarangController extends Controller
      */
     public function index()
     {
-        $barang = Barang::with('merk', 'tipe')->paginate(5);
+        $barang = Barang::latest()->with('merk', 'tipe')->paginate(5);
         return view('admin.barang.index',[
             'barangs' => $barang,
             'title' => 'Table Barang'
