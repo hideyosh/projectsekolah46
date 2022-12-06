@@ -139,4 +139,14 @@ class BarangController extends Controller
         $barang->delete();
         return redirect()->route('barang.index');
     }
+
+    public function pdf()
+    {
+        return 'halo';
+    }
+
+    public function excel()
+    {
+
+    }
 }

@@ -9,7 +9,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\MerkController;
 use App\Http\Controllers\TipeController;
-
+use Whoops\Run;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,9 +26,6 @@ Route::get('/', function () {
     return view('welcome');
 })->middleware('guest')->name('welcome');
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');/
 
 Route::middleware('auth', 'verified')->group(function () {
     Route::middleware('admin')->group(function() {
@@ -38,6 +35,8 @@ Route::middleware('auth', 'verified')->group(function () {
         Route::resource('barang', BarangController::class);
         Route::resource('tipe', TipeController::class);
         Route::resource('merk', MerkController::class);
+        Route::get('/pdf',[BarangController::class, 'pdf'])->name('barang.pdf');
+        Route::get('/excel',[BarangController::class, 'excel'])->name('barang.excel');
     });
 
     Route::controller(ProfileController::class)->group(function () {
@@ -50,11 +49,9 @@ Route::middleware('auth', 'verified')->group(function () {
         Route::post('/changepassword/update','update')->name('changepassword.update');
     });
 
-    Route::middleware('user')->group(function () {
-        Route::get('/home', function () {
-            return view('home');
-        })->name('home');
-    });
+    Route::get('/home', function () {
+        return view('home');
+    })->middleware('user')->name('home');
 });
 
 require __DIR__.'/auth.php';

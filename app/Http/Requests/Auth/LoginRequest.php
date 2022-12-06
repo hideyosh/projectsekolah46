@@ -50,8 +50,7 @@ class LoginRequest extends FormRequest
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([
-                'email' => trans('validation.'),
-                'password' => trans('validation.current_password'),
+                'email' => trans('auth.failed'),
             ]);
         }
 
