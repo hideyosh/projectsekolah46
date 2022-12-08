@@ -42,11 +42,11 @@
                                         @endif
                                         @csrf
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="floatingInput" name="name" placeholder="name@example.com" required>
+                                            <input type="text" class="form-control" id="floatingInput" name="name" placeholder="name@example.com" required value="{{ old('name') }}">
                                             <label for="floatingInput">Username</label>
                                           </div>
                                           <div class="form-floating mb-3">
-                                            <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com" required>
+                                            <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com" required value="{{ old('email') }}">
                                             <label for="floatingInput">Email address</label>
                                           </div>
                                           <div class="form-floating mb-3">

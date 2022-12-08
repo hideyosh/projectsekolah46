@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     use HasFactory;
+
+    protected $guarded = [
+        'id'
+    ];
+
+    public function barang()
+    {
+        return $this->belongsToMany(Barang::class);
+    }
 }
+

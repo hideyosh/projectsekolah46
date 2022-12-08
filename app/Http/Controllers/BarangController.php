@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 // use Illuminate\Http\Request;
+
+use App\Exports\BarangExport;
 use App\Models\Barang;
 use App\Models\Tipe;
 use App\Models\Merk;
 use App\Http\Requests\BarangRequest;
+use Maatwebsite\Excel\Facades\Excel;
 
 class BarangController extends Controller
 {
@@ -22,6 +25,7 @@ class BarangController extends Controller
             'barangs' => $barang,
             'title' => 'Table Barang'
         ]);
+
         }
 
     /**
@@ -41,6 +45,7 @@ class BarangController extends Controller
             'merk' => $merk,
             'tipe' => $tipe
         ]);
+
     }
 
     /**
@@ -147,6 +152,6 @@ class BarangController extends Controller
 
     public function excel()
     {
-
+        return Excel::download(new BarangExport, 'laporan.xlsx');
     }
 }

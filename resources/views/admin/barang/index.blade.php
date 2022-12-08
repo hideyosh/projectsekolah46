@@ -7,7 +7,6 @@
 
     <div class="d-flex">
         <a class="btn btn-rounded btn-outline-primary w-25 ms-4 mt-3" href="{{ route('barang.create') }}">Create Barang</a>
-        <a class="btn btn-rounded btn-outline-danger w-10 ms-3 mt-3" href="{{ route('barang.pdf') }}">Add PDF</a>
         <a class="btn btn-rounded btn-outline-success w-10 ms-3 mt-3" href="{{ route('barang.excel') }}">Add Excel</a>
     </div>
 

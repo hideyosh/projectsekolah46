@@ -22,4 +22,9 @@ class Barang extends Model
     {
         return $this->belongsTo(Merk::class);
     }
+
+    public function order()
+    {
+        return $this->hasMany(Order::class);
+    }
 }

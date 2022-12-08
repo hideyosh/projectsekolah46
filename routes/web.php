@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\BasicuserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ChangePasswordController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MerkController;
 use App\Http\Controllers\TipeController;
 use Whoops\Run;
@@ -49,9 +50,10 @@ Route::middleware('auth', 'verified')->group(function () {
         Route::post('/changepassword/update','update')->name('changepassword.update');
     });
 
-    Route::get('/home', function () {
-        return view('home');
-    })->middleware('user')->name('home');
+    Route::controller(HomeController::class)->group(function () {
+        Route::get('/home', 'create')->name('home.create');
+        Route::get('/home/store', 'store')->name('home.store');
+    });
 });
 
 require __DIR__.'/auth.php';
