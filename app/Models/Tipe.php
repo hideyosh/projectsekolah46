@@ -13,7 +13,7 @@ class Tipe extends Model
         'id'
     ];
 
-    public function barang()
+    public function barangs()
     {
         return $this->hasMany(Barang::class);
     }

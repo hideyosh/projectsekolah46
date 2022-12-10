@@ -30,7 +30,6 @@ Route::get('/', function () {
 
 Route::middleware('auth', 'verified')->group(function () {
     Route::middleware('admin')->group(function() {
-        Route::get('/dashboard', DashboardController::class)->name('dashboard');
         Route::resource('user', UserController::class);
         Route::resource('basicuser', BasicuserController::class);
         Route::resource('barang', BarangController::class);
@@ -39,6 +38,8 @@ Route::middleware('auth', 'verified')->group(function () {
         Route::get('/pdf',[BarangController::class, 'pdf'])->name('barang.pdf');
         Route::get('/excel',[BarangController::class, 'excel'])->name('barang.excel');
     });
+
+    Route::get('/dashboard', DashboardController::class)->name('dashboard');
 
     Route::controller(ProfileController::class)->group(function () {
         Route::get('/profile','index')->name('profile.index');
@@ -52,7 +53,7 @@ Route::middleware('auth', 'verified')->group(function () {
 
     Route::controller(HomeController::class)->group(function () {
         Route::get('/home', 'create')->name('home.create');
-        Route::get('/home/store', 'store')->name('home.store');
+        Route::post('/home/store', 'store')->name('home.store');
     });
 });
 

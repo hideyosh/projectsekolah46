@@ -1,3 +1,4 @@
+{{-- @if(Auth::check()->role()->) --}}
 <div class="deznav">
     <div class="deznav-scroll">
         <ul class="metismenu" id="menu">
@@ -42,4 +43,5 @@
         </ul>
     </div>
 </div>
+{{-- @endif --}}
 

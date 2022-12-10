@@ -16,7 +16,7 @@
                             </ul>
                         </div>
                         @endif
-                
+
                 @csrf
 
                 <div class="form-group mb-4">

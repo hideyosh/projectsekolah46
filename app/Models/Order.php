@@ -15,7 +15,12 @@ class Order extends Model
 
     public function barang()
     {
-        return $this->belongsToMany(Barang::class);
+        return $this->belongsToMany(Barang::class, 'orders', 'barang_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }
 
