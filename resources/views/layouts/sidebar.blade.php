@@ -1,9 +1,9 @@
-{{-- @if(Auth::check()->role()->) --}}
 <div class="deznav">
     <div class="deznav-scroll">
+        @if(Auth::user()->role !== 'user')
         <ul class="metismenu" id="menu">
             <li>
-                <a href="{{ route('dashboard') }}" class="ai-icon" aria-expanded="false">
+                <a href="{{ route('dashboard.index') }}" class="ai-icon" aria-expanded="false">
                     <i class="flaticon-381-networking"></i>
                     <span class="nav-text">Dashboard</span>
                 </a>
@@ -41,7 +41,21 @@
                 </a>
             </li>
         </ul>
+
+        @else
+
+        <ul class="metismenu" id="menu">
+            <li>
+                <a href="{{ route('dashboard.index') }}" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-networking"></i>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+            </li>
+        </ul>
+        @endif
     </div>
 </div>
-{{-- @endif --}}
+
+
+
 

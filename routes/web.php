@@ -39,7 +39,9 @@ Route::middleware('auth', 'verified')->group(function () {
         Route::get('/excel',[BarangController::class, 'excel'])->name('barang.excel');
     });
 
-    Route::get('/dashboard', DashboardController::class)->name('dashboard');
+    Route::controller(DashboardController::class)->group(function () {
+        Route::get('/dashboard','index')->name('dashboard.index');
+    });
 
     Route::controller(ProfileController::class)->group(function () {
         Route::get('/profile','index')->name('profile.index');

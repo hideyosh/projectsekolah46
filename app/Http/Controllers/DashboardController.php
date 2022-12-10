@@ -2,23 +2,32 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\Order;
 use App\Models\Barang;
 
-// use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    public function __invoke()
+    public function index()
     {
+        $order = Order::with('barang')->get();
+        $barang = Barang::with('order')->get();
+
         $admins = User::where('role', 'superadmin')->orWhere('role', 'admin')->count();
         $users = User::where('role', 'user')->count();
         $barangs = Barang::count();
 
-        return view('admin.dashboard.index',[
-            'title' => 'Dashboard',
+        return view('dashboard.index',[
+            'title1' => 'Dashboard',
+            'title2' => 'Create Pesanan',
             'users' => $users,
             'admins' => $admins,
-            'barangs' => $barangs
+            'barangs' => $barangs,
+            'order' => $order,
+            'barang' => $barang,
         ]);
+
+
     }
 }
