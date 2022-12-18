@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-xl-12 col-xxl-12">
                     <div class="row">
-                        <div class="col-lg-4 col-sm-6">
+                        <div class="col-lg-3 col-sm-6">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="media align-items-center">
@@ -24,7 +24,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-sm-6">
+                        <div class="col-lg-3 col-sm-6">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="media align-items-center">
@@ -39,7 +39,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-sm-6">
+                        <div class="col-lg-3 col-sm-6">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="media align-items-center">
@@ -54,11 +54,27 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="media align-items-center">
+                                        <span class="mr-4">
+                                            <i class="bi bi-cart-fill fs-1 text-primary"></i>
+                                        </span>
+                                        <div class="media-body ml-1">
+                                            <p class="mb-2">Pesanan</p>
+                                            <h3 class="mb-0 text-secondary fw-400">{{ $orders }}</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 </div>
 
 @else
@@ -69,7 +85,7 @@
     </div>
     <div class="card-body">
         <div class="basic-form">
-            <form class="form-valide-with-icon" method="POST" action="{{ route('home.store') }}" novalidate="">
+            <form class="form-valide-with-icon" method="POST" action="{{ route('dashboard.store') }}" novalidate="">
                 @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -104,6 +120,13 @@
                         <span class="input-group-text">
                             Buah
                         </span>
+                    </div>
+                </div>
+                <div class="form-group mb-4">
+                    <label for="text-label">Pesan</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-chat-dots"></i></span>
+                        <input type="text" class="form-control" name="pesan" aria-selected="" placeholder="Enter a pesan.." required="">
                     </div>
                 </div>
                 <div class="form-group">

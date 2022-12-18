@@ -15,7 +15,8 @@ class Order extends Model
 
     public function barang()
     {
-        return $this->belongsToMany(Barang::class, 'orders', 'barang_id');
+        // return $this->belongsToMany(Barang::class, 'orders', 'barang_id'); ini error ajg harus belajar lagi
+        return $this->belongsTo(Barang::class);
     }
 
     public function user()

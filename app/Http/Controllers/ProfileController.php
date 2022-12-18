@@ -12,7 +12,7 @@ class ProfileController extends Controller
     {
         $id = Auth::user()->id;
         $data = User::find($id);
-        return view('admin.profile.index',[
+        return view('profile.index',[
             'title' => 'My Profile',
             'data' => $data,
         ]);
@@ -21,7 +21,7 @@ class ProfileController extends Controller
     {
         $id = Auth::user()->id;
         $data = User::find($id);
-        return view('admin.profile.edit',[
+        return view('profile.edit',[
             'title' => 'Edit My Profile',
             'data' => $data,
         ]);

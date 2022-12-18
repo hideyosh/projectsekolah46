@@ -49,14 +49,7 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="#hero">Home</a></li>
-
-          <li class="menu-has-children"><a href="">Account</a>
-            <ul>
-              <li><a href="{{route('login')}}">Login</a></li>
-              <li><a href="{{route('register')}}">Register</a></li>
-            </ul>
-          </li>
+          <li class="menu-active"><a href="{{ route('login') }}">Login</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
